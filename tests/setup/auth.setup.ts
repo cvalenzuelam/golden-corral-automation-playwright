@@ -9,7 +9,7 @@ setup('authenticate', async ({ page }) => {
     await page.goto('/auth/login');
     await page.getByPlaceholder('Email').fill(process.env.TEST_USER_EMAIL!);
     await page.getByPlaceholder('Password').fill(process.env.TEST_USER_PASSWORD!);
-    await page.getByRole('button', { name: 'LOGIN' }).click();
+    await page.locator("button[type='submit']").click();
     await page.waitForURL(/.*my-profile/);
     await page.context().storageState({ path: authFile });
 });
