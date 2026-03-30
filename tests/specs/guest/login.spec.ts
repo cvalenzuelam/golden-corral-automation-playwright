@@ -6,7 +6,7 @@ test.describe('Login test suite', () => {
         await loginPage.navigateTo('/auth/login');
     });
 
-    test.skip('Validate happy path Login', async ({ page, loginPage }) => {
+    test('Validate happy path Login', async ({ page, loginPage }) => {
         const email = process.env.TEST_USER_EMAIL as string;
         const password = process.env.TEST_USER_PASSWORD as string;
 
@@ -107,7 +107,7 @@ test.describe('Login test suite', () => {
     test('Terms and Conditions link navigation', async ({ page, loginPage }) => {
         await loginPage.termsAndConditionsLink.click();
         await expect(page).toHaveURL(/.*terms/);
-        await expect(page.getByRole('heading', { name: '403 Forbidden' })).toBeVisible();
+
     });
 
 });

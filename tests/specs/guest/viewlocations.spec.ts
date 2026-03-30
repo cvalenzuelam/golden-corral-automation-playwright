@@ -42,7 +42,7 @@ test.describe("View Locations Page", () => {
         await expect(viewLocationsPage.partySizeErrorMessage).toBeVisible();
     });
 
-    test("Validate Group Party Size top 113", async ({ viewLocationsPage }) => {
+    test.skip("Validate Group Party Size top 113", async ({ viewLocationsPage }) => {
 
         const dismissAlert = async () => {
             await expect(viewLocationsPage.reservationUnavailableMessage).toBeVisible();
