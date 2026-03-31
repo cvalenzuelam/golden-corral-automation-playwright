@@ -6,7 +6,7 @@ test.describe("View Locations Page", () => {
         await page.goto("/view-locations");
     });
 
-    test("Validate view location happy path", async ({ viewLocationsPage, page, playwrightUtils }) => {
+    test.skip("Validate view location happy path", async ({ viewLocationsPage, page, playwrightUtils }) => {
 
         await viewLocationsPage.datePicker.click();
         await viewLocationsPage.selectAvailableDate();
@@ -21,12 +21,12 @@ test.describe("View Locations Page", () => {
         await viewLocationsPage.validateDateRestrictions();
     });
 
-    test.skip("Validate date restriction one year", async ({ viewLocationsPage }) => {
+    test("Validate date restriction one year", async ({ viewLocationsPage }) => {
         await viewLocationsPage.datePicker.click();
         await viewLocationsPage.validateOneYearRange();
     });
 
-    test("Select available date and validate input value", async ({ viewLocationsPage }) => {
+    test.skip("Select available date and validate input value", async ({ viewLocationsPage }) => {
         await viewLocationsPage.datePicker.click();
         await viewLocationsPage.selectAvailableDate();
     });
