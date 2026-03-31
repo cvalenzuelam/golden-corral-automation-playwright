@@ -30,7 +30,7 @@ export default defineConfig({
     baseURL: 'https://landing-rs-uat.gc.lumston.dev',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
 
     /* Iniciar el navegador maximizado automáticamente en tu monitor */
     viewport: null,

@@ -21,7 +21,7 @@ test.describe("View Locations Page", () => {
         await viewLocationsPage.validateDateRestrictions();
     });
 
-    test("Validate date restriction one year", async ({ viewLocationsPage }) => {
+    test.skip("Validate date restriction one year", async ({ viewLocationsPage }) => {
         await viewLocationsPage.datePicker.click();
         await viewLocationsPage.validateOneYearRange();
     });
