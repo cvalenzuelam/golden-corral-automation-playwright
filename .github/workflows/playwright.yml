@@ -30,6 +30,8 @@ jobs:
         TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
         INVALID_TEST_USER_EMAIL: ${{ secrets.INVALID_TEST_USER_EMAIL }}
         INVALID_TEST_USER_PASSWORD: ${{ secrets.INVALID_TEST_USER_PASSWORD }}
+        API_KEY: ${{ secrets.API_KEY }}
+        BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}
 
     - uses: actions/upload-artifact@v4
       if: always()
