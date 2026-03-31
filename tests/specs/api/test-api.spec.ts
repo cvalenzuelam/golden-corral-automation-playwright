@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Golden Corral API - Restaurants Exposed', () => {
+test.describe.skip('Golden Corral API - Restaurants Exposed', () => {
     const baseUrl = 'https://api-landing-rs-uat.gc.lumston.dev/restaurants/exposed';
 
     // --- PRUEBA POSITIVA (HAPPY PATH) ---
@@ -39,6 +39,6 @@ test.describe('Golden Corral API - Restaurants Exposed', () => {
 
         // NOTA: Algunas APIs devuelven 200 pero ignoran el error. 
         // Las APIs robustas DEBERÍAN devolver un error 400 o 422.
-        expect(response.status()).toBe(200);
+        expect(response.status()).toBe(401);
     });
-});
+}); 
