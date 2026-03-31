@@ -86,8 +86,15 @@ export class ViewLocationsPage extends BasePage {
         await this.dataPickerYearInput.fill(nextYear);
         await this.dataPickerYearInput.press('Enter');
 
-        const nextDayNumber = (Number(day) + 1).toString();
-        const nextDayLabel = `${month} ${nextDayNumber}, ${nextYear}`;
+        const todayDate = new Date(`${month} ${day}, ${year}`);
+        const nextDayDate = new Date(todayDate);
+        nextDayDate.setFullYear(todayDate.getFullYear() + 1);
+        nextDayDate.setDate(nextDayDate.getDate() + 1);
+
+        const nextDayNumber = nextDayDate.getDate().toString();
+        const nextDayMonth = nextDayDate.toLocaleString('en-US', { month: 'long' });
+        const nextDayYear = nextDayDate.getFullYear();
+        const nextDayLabel = `${nextDayMonth} ${nextDayNumber}, ${nextDayYear}`;
         const firstLockedDay = this.page.locator(`.flatpickr-day[aria-label="${nextDayLabel}"]`);
 
         await expect(firstLockedDay).toHaveText(nextDayNumber);
