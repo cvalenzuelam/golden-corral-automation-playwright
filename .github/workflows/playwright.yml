@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: 🚀 Golden Corral E2E Automation
 on:
   push:
     branches: [ main, master ]
@@ -6,6 +6,9 @@ on:
     branches: [ main, master ]
 jobs:
   test:
+    name: QA Execution
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -13,8 +16,7 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-        cache: 'npm' # Habilita el caché automático de node_modules
-
+        cache: 'npm'
     - name: Install dependencies
       run: npm ci
 
