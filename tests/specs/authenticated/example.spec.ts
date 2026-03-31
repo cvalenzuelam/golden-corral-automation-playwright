@@ -6,5 +6,5 @@ test('My Profile Page - Should load My Profile page being logged in', async ({ p
 
     // Si estamos logueados, la URL debe quedarse en my-profile (no redirigir al login)
     await expect(page).toHaveURL(/.*my-profile/);
-    await expect(page.getByRole('heading', { name: 'My prokfile' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'My prokfsssssile' })).toBeVisible();
 }); 
